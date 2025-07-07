@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Expense Tracker</h1>
+
+        <!-- Salary Input -->
+        <div class="section">
+            <h2>Monthly Salary</h2>
+            <input type="number" id="salaryInput" placeholder="Enter Monthly Salary (₹)" />
+            <button onclick="saveSalary()">Save Salary</button>
+        </div>
+
+        <!-- Add Expense -->
+        <div class="section">
+            <h2>Add Expense</h2>
+            <input type="number" id="amountInput" placeholder="Amount (₹)" />
+            <input type="text" id="categoryInput" placeholder="Category (e.g., Food, Rent)" />
+            <input type="text" id="descriptionInput" placeholder="Description" />
+            <button onclick="submitExpense()">Add Expense</button>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="section">
+            <h2>Filter by Category</h2>
+            <select id="categoryFilter" onchange="filterExpenses()">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Rent">Rent</option>
+                <option value="Travelling">Travelling</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Bill">Bill</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <!-- Expense Table -->
+        <div class="section">
+            <h2>Expenses</h2>
+            <table id="expenseTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows go here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pie Chart and Recommendations -->
+        <div class="section">
+            <button onclick="showPieChart()">Show Pie Chart</button>
+            <button onclick="generateRecommendations()">Get Recommendations</button>
+        </div>
+
+        <div id="recommendationBox" class="recommendations"></div>
+        <div id="status" class="status"></div>
+
+    </div>
+
+    <script src="script.js"></script> <!-- JavaScript logic goes here -->
+</body>
+</html>
